@@ -12,6 +12,11 @@ class CalculatorTest {
     void addsTwoNumbers() {
         assertEquals(5, calc.add(2, 3));
     }
+    
+    @Test
+    void diffTwoNumbers() {
+        assertEquals(1, calc.subtract(3, 2));
+    }
 
     @Test
     void dividesTwoNumbers() {
