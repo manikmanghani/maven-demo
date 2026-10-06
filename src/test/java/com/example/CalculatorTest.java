@@ -22,4 +22,11 @@ class CalculatorTest {
     void rejectsDivisionByZero() {
         assertThrows(IllegalArgumentException.class, () -> calc.divide(1, 0));
     }
+    
+    @Test
+    void multipliesTwoNumbers() {
+        assertEquals(12, calc.multiply(3, 4));
+    }
+    
+    
 }
