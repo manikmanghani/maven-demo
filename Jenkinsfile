@@ -1,10 +1,14 @@
 pipeline {
     agent any
 
+    options {
+        buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '5'))
+    }
+
     stages {
         stage('Build') {
             steps {
-                bat 'mvn -B -DskipTests compile'
+                bat 'mvn -B compile'
             }
         }
 
@@ -22,6 +26,11 @@ pipeline {
         stage('Package') {
             steps {
                 bat 'mvn -B -DskipTests package'
+            }
+            post {
+                success {
+                    archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
+                }
             }
         }
     }
