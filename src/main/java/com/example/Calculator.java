@@ -11,9 +11,8 @@ public class Calculator {
         }
         return a / b;
     }
-<<<<<<< HEAD
-}
-=======
+
+
     
     public int multiply(int a, int b) {
         return a * b;
@@ -21,4 +20,4 @@ public class Calculator {
     
     
 }
->>>>>>> 75601b3 (Add multiply method and test.)
+
